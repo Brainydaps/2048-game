@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Maui2048.MainPage">
+
+    <ContentPage.Content>
+        <Grid Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Score and High Score -->
+            <Label x:Name="ScoreLabel"
+                   Text="Score: 0"
+                   FontSize="20"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   Grid.Row="0" Grid.Column="0"/>
+            <Label x:Name="HighScoreLabel"
+                   Text="High Score: 0"
+                   FontSize="20"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   Grid.Row="0" Grid.Column="1"/>
+
+            <!-- Undo and Restart Buttons -->
+            <Button Text="Undo"
+                    Clicked="OnUndoClicked"
+                    Grid.Row="1" Grid.Column="0"/>
+            <Button Text="Restart"
+                    Clicked="OnRestartClicked"
+                    Grid.Row="1" Grid.Column="1"/>
+
+            <!-- Game Grid -->
+            <Grid x:Name="GameGrid"
+                  Grid.Row="2" Grid.ColumnSpan="2"
+                  RowDefinitions="*,*,*,*"
+                  ColumnDefinitions="*,*,*,*"
+                  Padding="10">
+            </Grid>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
